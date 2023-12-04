@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
+const admin = require('firebase-admin');
+const serviceAccount = require('./capstone-project---wattwise-firebase-adminsdk-4d3ko-b286ae6b5a.json');
 
 app.use(bodyParser.json());
 
@@ -23,5 +25,10 @@ app.get('/api/data', (req, res) => {
         }
     });
 });
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://capstone-project---wattwise.firebaseio.com'
+  });
 
 
