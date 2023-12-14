@@ -1,0 +1,30 @@
+{
+  "name": "capstone-project",
+  "version": "1.0.0",
+  "description": "capstone",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^7.7.0",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "database": "^0.0.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-openapi-generator": "^1.2.0",
+    "firebase-admin": "^11.11.1",
+    "firestore": "^1.1.6",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "nanoid": "^5.0.4",
+    "storage": "^0.2.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
