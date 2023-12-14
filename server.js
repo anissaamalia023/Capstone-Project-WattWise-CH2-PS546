@@ -1,18 +1,22 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const expressOpenApi = require('express-openapi-generator');
+const cookieParser = require('cookie-parser');
+const routes = require('./src/Routes');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 8080;
 const admin = require('firebase-admin');
 const serviceAccount = require('./capstone-project---wattwise-firebase-adminsdk-4d3ko-b286ae6b5a.json');
 
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(cookieParser());
+app.use(routes);
 
 app.get('/', (req, res) => {
     res.send('Backend Wattwise');
 });
 
 app.listen(port, () => {
-    console.log(`Server berjalan di http://localhost:${3000}`);
+    console.log(`Server berjalan di http://localhost:${port}`);
 });
 
 app.get('/api/data', (req, res) => {
